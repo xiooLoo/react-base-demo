@@ -86,10 +86,10 @@ export default class OojsxClass extends React.PureComponent {
 		})
 	}
 	judgeBlock() {
-		const redBlock = <div><span style={{display: 'block', color: 'red', width: '10vw', height: '10vw'}}>♦</span></div>
-		const blackBlock = <div><span style={{display: 'block', color: 'black', width: '10vw', height: '10vw'}}>♦</span></div>
-		const redHeart = <div><span style={{display: 'block', color: 'red', width: '10vw', height: '10vw'}}>♠</span></div>
-		const blackHeart = <div><span style={{display: 'block', color: 'black', width: '10vw', height: '10vw'}}>♠</span></div>
+		const redBlock = <div><span style={{display: 'block', fontSize: '50px', color: 'red', width: '10vw', height: '10vw'}}>♦</span></div>
+		const blackBlock = <div><span style={{display: 'block', fontSize: '50px', color: 'black', width: '10vw', height: '10vw'}}>♦</span></div>
+		const redHeart = <div><span style={{display: 'block', fontSize: '50px', color: 'red', width: '10vw', height: '10vw'}}>♠</span></div>
+		const blackHeart = <div><span style={{display: 'block', fontSize: '50px', color: 'black', width: '10vw', height: '10vw'}}>♠</span></div>
 		switch(this.state.currentBlock) {
 			case 1:
 				return redBlock
