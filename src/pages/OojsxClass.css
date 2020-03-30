@@ -4,3 +4,20 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.jsx-express {
+	display: 'flex';
+	flex-flow: row nowrap;
+	align-items: center;
+	background-color: '#eaeaea';
+	width: 50vw; 
+	height: 50px; 
+}
+
+.jsx-form {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: flex-start;
+	width: 400px;
+}

@@ -86,10 +86,10 @@ export default class OojsxClass extends React.PureComponent {
 		})
 	}
 	judgeBlock() {
-		const redBlock = <div><span style={{display: 'block', fontSize: '50px', color: 'red', width: '10vw', height: '10vw'}}>♦</span></div>
-		const blackBlock = <div><span style={{display: 'block', fontSize: '50px', color: 'black', width: '10vw', height: '10vw'}}>♦</span></div>
-		const redHeart = <div><span style={{display: 'block', fontSize: '50px', color: 'red', width: '10vw', height: '10vw'}}>♠</span></div>
-		const blackHeart = <div><span style={{display: 'block', fontSize: '50px', color: 'black', width: '10vw', height: '10vw'}}>♠</span></div>
+		const redBlock = <div><span style={{display: 'block', fontSize: '50px', color: 'red', width: '10vw', height: '3vw'}}>♦</span></div>
+		const blackBlock = <div><span style={{display: 'block', fontSize: '50px', color: 'black', width: '10vw', height: '3vw'}}>♦</span></div>
+		const redHeart = <div><span style={{display: 'block', fontSize: '50px', color: 'red', width: '10vw', height: '3vw'}}>♠</span></div>
+		const blackHeart = <div><span style={{display: 'block', fontSize: '50px', color: 'black', width: '10vw', height: '3vw'}}>♠</span></div>
 		switch(this.state.currentBlock) {
 			case 1:
 				return redBlock
@@ -110,17 +110,32 @@ export default class OojsxClass extends React.PureComponent {
 	}
 
 	render() {
+		let tempExpress = (this.state.count % 2 === 0)
 		return (
 			<div className="jsx-base">
-				<p style={{ width: '20vw', cursor: 'pointer', border: '2px solid #000' }} onClick={(e) => this.handleNextA('arg0000000', e)}>(000)外来数据：{this.props.outCount}</p>
-				<p style={{ width: '20vw', cursor: 'pointer', border: '2px solid #000' }} onClick={this.handleNextB.bind(this, 'arg11111111', 'arg222')}>(111)外来数据：{this.props.outCount}</p>
+				<span style={{display: 'flex', width: '100%', color: '#F84B4D'}}>类组件（有状态组件）：</span>
+				<p style={{ width: '20vw', cursor: 'pointer', border: '2px solid #000' }} onClick={(e) => this.handleNextA('arg0000000', e)}>onClick()事件实现方式①：外来数据（{this.props.outCount}）</p>
+				<p style={{ width: '20vw', cursor: 'pointer', border: '2px solid #000' }} onClick={this.handleNextB.bind(this, 'arg11111111', 'arg222')}>事件实现方式②：外来数据（{this.props.outCount}）</p>
 				<br/>
+
 				<span>当前计数：{this.state.count}</span>
-				<br/>
 				<button onClick={this.handleClick}>╋</button>
 				<br/>
+
+				<br/>
+
 				<button onClick={this.changeRandom}>条件渲染示例😁</button>
 				{this.judgeBlock()}
+				
+				{/*
+				  *	通过花括号包裹代码，可以在 JSX 中嵌入任何表达式：
+				  */}
+				<span style={{display: 'flex', width: '100%', color: '#F84B4D'}}>通过花括号包裹代码，可以在 JSX 中嵌入任何表达式，(点击‘条件渲染示例😁’按钮查看效果)：</span>
+				<div className="jsx-express">
+					{
+						tempExpress ? (<h2>三目运算结果为-true时~~</h2>) : (<h2>三目运算结果为-false时~~</h2>)
+					}
+				</div>
 			</div>
 		)
 	}

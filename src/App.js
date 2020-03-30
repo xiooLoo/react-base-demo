@@ -3,12 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 import Oojsx from './pages/Oojsx.js'
 import OojsxClass from './pages/OojsxClass.js'
+import JsxList from './pages/jsxList.js'
+import JsxForm from './pages/jsxForm.js'
+
 function App() {
-  const count = 100
+  const count = 1
   return (
     <div className="App">
-      <Oojsx />
+      <Oojsx testName="测试名"/>
       <OojsxClass outCount={count} />
+      <JsxList />
+      <JsxForm />
     </div>
   );
 }
