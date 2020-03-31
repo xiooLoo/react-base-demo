@@ -23,12 +23,29 @@ import './OojsxClass.css'
  * @props： 
  */
 export default class OojsxClass extends React.PureComponent {
+	/**
+	 *	【构造器】
+	 * 	每一个类中，都有一个构造器，如果我们没有手动指定构造器，
+	 那么可以认为类内部有个隐形的空构造器，类似于constructor(){}
+	 *
+	 *	【构造器作用】
+	 *	每当new一个类的时候，必然会优先执行构造器中的代码
+	 */
 	constructor(props) {
 		super(props);
 		this.state = {
 			count: 0,
 			currentBlock: 1
 		}
+	}
+
+
+	/**
+	 *	在class中，只能写构造器、静态方法、静态属性、实例方法
+	 */
+	static info = '测试静态数据'
+	static show() {
+		console.log('测试静态方法')
 	}
 
 	handleClick = () => {
